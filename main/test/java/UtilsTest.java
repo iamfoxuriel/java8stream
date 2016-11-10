@@ -1,5 +1,4 @@
-import junit.framework.Assert;
-import junit.framework.TestCase;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +11,7 @@ import static org.junit.Assert.assertArrayEquals;
  * Sorting Utils testCases
  * Created by Jadenz on 2016/2/2.
  */
-public class UtilsTest extends TestCase {
+public class UtilsTest  {
 
     List<Extension> initialExtensions;
     Extension albertExtension = new Extension("Albert", "Jones", "ext1", "TypeB");
@@ -71,20 +70,20 @@ public class UtilsTest extends TestCase {
     @Test
     public void testSumByQuarter() {
         List<QuarterSalesItem> result = Utils.sumByQuarter(saleItems);
-        Assert.assertEquals(300.2d, result.get(0).getTotal());
-        Assert.assertEquals(320d, result.get(1).getTotal());
-        Assert.assertEquals(370d, result.get(2).getTotal());
-        Assert.assertEquals(280d, result.get(3).getTotal());
+        Assert.assertEquals(Double.valueOf(300.2d), Double.valueOf(result.get(0).getTotal()));
+        Assert.assertEquals(Double.valueOf(320d), Double.valueOf(result.get(1).getTotal()));
+        Assert.assertEquals(Double.valueOf(370d), Double.valueOf(result.get(2).getTotal()));
+        Assert.assertEquals(Double.valueOf(280d), Double.valueOf(result.get(3).getTotal()));
     }
 
 
     @Test
     public void testMaxByQuarter() {
         List<QuarterSalesItem> result = Utils.maxByQuarter(saleItems);
-        Assert.assertEquals(110.1d, result.get(0).getTotal());
-        Assert.assertEquals(110d, result.get(1).getTotal());
-        Assert.assertEquals(140d, result.get(2).getTotal());
-        Assert.assertEquals(100d, result.get(3).getTotal());
+        Assert.assertEquals(Double.valueOf(110.1), Double.valueOf(result.get(0).getTotal()));
+        Assert.assertEquals(Double.valueOf(110d), Double.valueOf(result.get(1).getTotal()));
+        Assert.assertEquals(Double.valueOf(140d), Double.valueOf(result.get(2).getTotal()));
+        Assert.assertEquals(Double.valueOf(100d), Double.valueOf(result.get(3).getTotal()));
     }
 
     @Test
